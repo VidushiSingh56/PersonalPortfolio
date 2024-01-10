@@ -75,6 +75,8 @@ navLinks.forEach(link => {
     });
 });
 
+
+let threshold = 50;
 window.onscroll = () => {
       sections.forEach(sec => {
           let top = window.scrollY;
@@ -89,11 +91,24 @@ window.onscroll = () => {
           else{
             offset = sec.offsetTop - 100;
           }
+         
           if(top >= offset && top < offset + height) {
               navLinks.forEach(links => {
                   links.classList.remove('active');
                   document.querySelector('.navbar li a[href*=' + id + ']').classList.add('active');
               });
+
+              if (top <= threshold && document.getElementById('landing')) {
+                // Change the background color of the navbar
+                document.querySelector('.navbar').style.transition = 'background-color 0.3s';
+                document.querySelector('.navbar').style.backgroundColor = 'transparent';
+            } else {
+                // Reset the background color for other sections
+                document.querySelector('.navbar').style.transition = 'background-color 0.3s';
+                document.querySelector('.navbar').style.backgroundColor = ' #0000006e';
+            }
+            scrollDistance= top;
           };
+          
       });
   };

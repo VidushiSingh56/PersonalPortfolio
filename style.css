@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Centra No2";
+ 
 }
 h1{
     font-size: 3rem;
@@ -12,7 +13,7 @@ h1{
 .landing {
     color: antiquewhite;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background-image: url(img/groupland.png);
     background-color: transparent;
     background-position: center;
@@ -31,8 +32,8 @@ h1{
     align-items: center;
     justify-content: center;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    top: 35%;
+    transform: translate(-50%, -50%);
     text-align: center;
 
 
@@ -80,7 +81,7 @@ h1{
     left: 0;
     height: 117%;
     width: 100%;
-    background-color: rgb(1, 8, 31);
+    background-color: rgb(1,8,31);
     border-left: 2px solid rgb(255 0 160);
     color: antiquewhite;
     animation: animate 4s steps(12) infinite;
@@ -98,11 +99,20 @@ h1{
 
 
 
-/* Styles for the .navbar section */
+
 .navbar {
-    position: absolute;
-    right: 20px; /* Adjust the right spacing as needed */
-    top: 15px;
+    position: fixed;
+    z-index: 100;
+    /* right: 20px; */
+    width: 100%;
+    /* top: 15px; */
+    display: flex;
+    height: 9vh;
+    /* opacity: 1.9; */
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #9e9e9e0f;
 }
 
 .navbar a {
@@ -110,14 +120,11 @@ h1{
     text-decoration: none;
 }
 
-.navbar a:hover {
-    border: 2px solid rgb(255 0 160);
-    border-radius: 30px;
-    background-color: rgb(255 0 160);
-    padding: 4px 20px;
-    font-size: 20px;
-    color: black;
+.navbar a:hover,.navbar li a.active {
+    color:rgb(255 0 160);
 }
+
+
 
 .navbar ul {
     display: flex;
@@ -126,9 +133,23 @@ h1{
 .navbar li {
     display: flex;
     padding: 3px 17px;
-    font-size: 20px;
+    font-size: 3vh;
     font-family: "Centra No2";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Styles for the .con section */
 .con {
@@ -180,8 +201,8 @@ h1{
     background-color: rgb(0, 0, 0);
     background-image: url(img/Group\ 10312.png);
     padding: 20px;
-    height: 42rem;
-    text-align: center; /* Center the content */
+    height: 150vh;
+    text-align: center;
 }
 
 /* Center the <h1> text */
@@ -223,13 +244,21 @@ h1{
 
 
 .project {
-    position: relative;
+    position: absolute;
     background-color: rgb(0, 0, 0);
     background-image: url(img/3rd.png);
     background-size: cover;
     padding: 20px;
-    /* height: 41rem; */
-    text-align: center; /* Center the content */
+    height: 90vh;
+    z-index: 10;
+    text-align: center;
+    width: 146vh;
+    top: 246vh;
+    left: 17%;
+    left: 50%;
+    border: 2px solid white;
+    border-radius: 34px;
+    transform: translateX(-50%);
 }
 
 /* Center the <h1> text */
@@ -239,94 +268,114 @@ h1{
     margin-bottom: 20px;
 }
 
+
+
+
+.container100 {
+    position: relative;
+    width: 420px;
+    height: 200px;
+    display: inline-block;
+}
+
+.imagefox {
+    display: block;
+    width: 414px;
+    height: 200px;
+    border-radius: 34px;
+}
+
+
+.texts {
+    color: antiquewhite;
+    font-size: 20px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 8vw;
+    transform: translate(-50%, -50%);
+    font-family: "Centra No2";
+    text-decoration: underline;
+    font-style: italic;
+    
+    
+}
+.texts2{
+    color: antiquewhite;
+    font-size: 25px;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    width: 15vw;
+    transform: translate(-50%, -32%);
+    font-family: "Centra No2";
+}
+.overlays {
+    position: absolute;
+    opacity: 0;
+    transition:all .8s ease;
+    background: linear-gradient(89deg,#FF00A0 -5.91%,#2E0863 87.58%);
+    
+}
+.container100:hover .overlays,.container100:hover  {
+    opacity: 0.95;
+}
+
+.overlayLeft{
+    height: 100%;
+    width:0;
+    top:0;
+    left:0;
+    border-radius: 34px;
+   
+}
+
+.container100:hover .overlayLeft {
+    width: 98.8%;
+}
+
+
+
+
 /* Create a responsive grid */
 .pro {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
+    position: absolute;
     max-width: 100%;
     justify-items: center;
     margin-top: 60px;
     grid-template-columns: repeat(auto-fit, minmax(350px,2fr));
-    width: 94%;
+    width: 78%;
     /* padding-left: 6%; */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Style the project items */
-.pro .item {
-    border: 2px solid #414040;
-    border-radius: 17px;
-    width: 367px;
-    position: relative;
-    background-size: cover;
-    background-position: left;
-    background-repeat: round;
-    height: 200px;
-}
-
-.pro .item:hover {
-    box-shadow: 3px 3px 10px rgb(0 0 0);
-    background-color: rgb(255 0 160);
-    position: relative;
-    transform: scale(1.05);
-}
 
 
 
 
-.pro #item3,
-#item4 {
-    margin-top: 0px;
-}
 
-.pro #item1,
-#item2 {
-    margin-bottom: 0px;
-}
-
-.pro #item1 {
-    background-image: url(img/gym.png);
-    background-size: cover;
-    background-position-x: left;
-    background-repeat: round;
-    position: relative;
-
-}
-
-.pro #item2 {
-    background-image: url(img/food.png);
-    background-size: cover;
-    background-position-x: left;
-    background-repeat: round;
-    position: relative;
-}
-
-.pro #item3 {
-    background-image: url(img/jio.png);
-    background-size: cover;
-    background-position-x: left;
-    background-repeat: round;
-    position: relative;
-}
-
-.pro #item4 {
-    background-image: url(img/port\ \(2\).png);
-    background-size: cover;
-    background-position-x: left;
-    background-repeat: round;
-    position: relative;
-
-}
 
 
 .skills {
     position: relative;
     background-color: rgb(0, 0, 0);
-    background-image: url('img/4th.png');
+    background-image: url(img/4th.png);
     background-size: cover;
     padding: 20px;
-    text-align: center; /* Center the content */
+    height: 142vh;
+    text-align: center;
     color: rgb(237, 234, 230);
+}
+.frame1 {
+   position: relative;
+    top: 55vh;
+    padding-top: 2vh;
+    height: 73vh;
 }
 
 /* Center the <h1> text */
@@ -341,6 +390,8 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    position: relative;
+    top: 10vh;
     margin-top: 20px;
     padding: 0 20px;
 }
@@ -366,15 +417,20 @@ h1{
     background-size: cover;
     padding: 20px;
     text-align: center;
+    height: 100vh;
     color: rgb(237, 234, 230);
-    /* margin-top: 20px; */
+    /* margin-top: 20px;*/
 }
 /* Center the <h1> text */
 .contact h1 {
     /* font-size: 2rem; */
     margin-bottom: 20px;
 }
-
+.frame2 {
+    position: relative;
+    top: 12vh;
+    height: 52vh;
+}
 /* Center the details section */
 .details {
     display: flex;
@@ -419,6 +475,8 @@ h1{
     justify-content: center;
     margin-top: 42px;
     margin-bottom: 21px;
+    position: relative;
+    top: 12vh;
 }
 
 .cont {
@@ -571,11 +629,7 @@ h1{
    }
 } */
 @media screen and (max-width: 415px) {
-    .pro {
-        /* padding-left: 0%;
-        padding-right: 20%; */
-       
-    }
+    
     .circle{
         width: 69px;
     height: 69px;
@@ -589,17 +643,5 @@ h1{
     }
 
     /* Center the <h1> text for mobile */
-    .project h1 {
-        /* margin: 20px 0; */
-    }
-}
-@media screen and (max-width:300px)
-{
-    .pro{
-
-    }
-    .pro .item{
-        width: 150px;
-        height: 100px;
-    }
+    
 }

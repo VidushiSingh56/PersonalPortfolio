@@ -1,3 +1,4 @@
+
 const text = document.querySelector(".text2");
 
 const textLoad= () =>{
@@ -32,6 +33,7 @@ setInterval(textLoad, 12000);
 //         };
 //     });
 // };
+
 
 // Select all navigation links
 let sections = document.querySelectorAll('section');
@@ -112,3 +114,225 @@ window.onscroll = () => {
           
       });
   };
+
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const mainContainer = document.querySelector('.main');
+    const sections = document.querySelectorAll('.navbar, .landing, .home');
+
+    function checkScroll() {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const isVisible = (rect.top <= window.innerHeight / 2);
+            
+            if (isVisible) {
+                section.classList.add('reveal');
+            }
+        });
+
+        // Toggle background color based on the visibility of the landing section
+        const landingSection = document.querySelector('.landing');
+        const landingRect = landingSection.getBoundingClientRect();
+        const isLandingVisible = (landingRect.top <= window.innerHeight / 2);
+
+        if (isLandingVisible) {
+            mainContainer.style.backgroundColor = 'initial'; // Change to the desired color
+        } else {
+            mainContainer.style.backgroundColor = 'black'; // Initial color
+        }
+    }
+
+    // Initial check when the page loads
+    checkScroll();
+
+    // Check on scroll
+    window.addEventListener('scroll', checkScroll);
+});
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select the target element
+        const aboutSection = document.querySelector('.about');
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // If the section is in the viewport, add the 'show' class
+                    aboutSection.classList.add('show');
+                }
+            });
+        }, { threshold: 0.4 }); // Adjust the threshold based on your preference
+
+        // Start observing the target element
+        observer.observe(aboutSection);
+    });
+
+
+
+
+// const cursor = document.querySelector(".cursor");
+
+// document.addEventListener("mousemove", (e) => {
+//     let x = e.pageX;
+//     let y = e.pageY;
+
+//     cursor.style.top = y - cursor.offsetHeight / 2 + "px";
+//     cursor.style.left = x - cursor.offsetWidth / 2 + "px";
+// });
+
+
+
+const cursor = document.querySelector(".cursor");
+let cursorX = window.innerWidth / 2;
+let cursorY = window.innerHeight / 2;
+const multiplier = 0.08; // Adjust this value for smoother or faster movement
+
+document.addEventListener("mousemove", (e) => {
+    const targetX = e.clientX;
+    const targetY = e.clientY;
+
+    const dx = targetX - cursorX;
+    const dy = targetY - cursorY;
+
+    cursorX += dx * multiplier;
+    cursorY += dy * multiplier;
+
+    cursor.style.top = cursorY + "px";
+    cursor.style.left = cursorX + "px";
+});
+
+document.addEventListener("scroll", () => {
+    cursor.style.display = "block"; // Display the cursor on scroll
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// const cursor = document.querySelector(".cursor");
+// const textElements = document.querySelectorAll(".hover-effect");
+
+// document.addEventListener("mousemove", (e) => {
+//     let x = e.pageX;
+//     let y = e.pageY;
+
+//     cursor.style.top = y + "px";
+//     cursor.style.left = x + "px";
+// });
+
+// textElements.forEach((textElement) => {
+//     textElement.addEventListener("mouseover", () => {
+//         cursor.classList.add("hovered");
+//     });
+
+//     textElement.addEventListener("mouseout", () => {
+//         cursor.classList.remove("hovered");
+//     });
+// });
+
+
+
+
+
+
+
+
+
+
+// $(document).mousemove(function (e) {
+//     $(".cursor").css({
+//         left: e.pageX - 20, // Adjust as needed
+//         top: e.pageY - 20  // Adjust as needed
+//     });
+// });
+
+
+
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     Select the target element
+    //     const aboutSection = document.querySelector('.about');
+    
+    //     Set up the Intersection Observer
+    //     const observer = new IntersectionObserver(entries => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 If the section is in the viewport, add the 'show' class
+    //                 aboutSection.classList.add('show');
+    //             }
+    //         });
+    //     }, { threshold: 0.4 }); // Adjust the threshold based on your preference
+    
+    //     Start observing the target element
+    //     observer.observe(aboutSection);
+    // });
+    
+
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select the target element
+        const projectSection = document.querySelector('.project');
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // If the section is in the viewport, add the 'show' class
+                    projectSection.classList.add('show');
+                }
+            });
+        }, { threshold: 0.4 }); // Adjust the threshold based on your preference
+
+        // Start observing the target element
+        observer.observe(projectSection);
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select the target element
+        const skillsSection = document.querySelector('.skills');
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // If the section is in the viewport, add the 'show' class
+                    skillsSection.classList.add('show');
+                }
+            });
+        }, { threshold: 0.5}); // Adjust the threshold based on your preference
+
+        // Start observing the target element
+        observer.observe(skillsSection);
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select the target element
+        const contactSection = document.querySelector('.contact');
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // If the section is in the viewport, add the 'show' class
+                    contactSection.classList.add('show');
+                }
+            });
+        }, { threshold: 0.4 }); // Adjust the threshold based on your preference
+
+        // Start observing the target element
+        observer.observe(contactSection);
+    });
+
+
+

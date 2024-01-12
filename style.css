@@ -4,8 +4,48 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Centra No2";
- 
 }
+    /* .bodyy{
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+     } */
+     .cursor {
+   
+        width: 4.5vw;
+        height: 4.5vw;
+       
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        
+        mix-blend-mode: difference;
+        transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background-color: antiquewhite;
+        border-radius: 50%;
+        position: fixed;
+        z-index: 9999;
+       
+        
+        
+    }
+    
+    
+    
+   
+    /* .flat{
+         
+       
+          
+    }
+    .flat:hover ~ .cursor {
+        transform: scale(1.5);
+        
+    } */
+
+
+
 h1{
     font-size: 3rem;
 }
@@ -32,7 +72,7 @@ h1{
     align-items: center;
     justify-content: center;
     left: 50%;
-    top: 35%;
+    top: 37%;
     transform: translate(-50%, -50%);
     text-align: center;
 
@@ -112,7 +152,7 @@ h1{
     align-content: center;
     justify-content: center;
     align-items: center;
-    background-color: #9e9e9e0f;
+    
 }
 
 .navbar a {
@@ -137,64 +177,103 @@ h1{
     font-family: "Centra No2";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Styles for the .con section */
-.con {
+.m{
+    padding: 2vh;
     display: flex;
+    justify-content: center;
     position: relative;
-    top: 41px;
-    font-size: 29px;
-    /* height: 2.rem; */
+    align-items: center;
+    top: 9vh;
+    height: 18vh;
+    width: 100%;
 }
-
-.con a {
-    padding: 9px 9px;
-    padding-bottom: 0;
-    margin: 0 7px;
-    padding-left: 12px;
-    border: 2px solid;
+/* Styles for the .con section */
+.con{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    gap: 5px;
+}
+.con a{
+    display: flex;
+    width: 3.5vw;
+    height: 3.5vw;
     border-radius: 50%;
-    color: rgb(255 0 160);
+    background-color: transparent;
+    color: #FF00A0;
+    border: 2px solid #FF00A0;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    font-size: 4vh;
+    text-decoration: none;
+    transition: background-color 0.3s ease 0s;
 }
-
 .con a:hover {
-    background-color: rgb(255 0 160);
-    color: rgb(0, 0, 0);
-}
+    background-color: #FF00A0;
+color: black;}
 
 .con a:active {
     text-decoration: solid rgb(255 0 160);
 }
 
-/* Styles for the .btn section */
-.btn,
-.btn a {
+
+.resume {
+    text-align: center;
+    
     position: relative;
-    top: 6rem;
-    border: 2px solid rgb(255 0 160);
-    background-color: rgb(255 0 160);
-    padding: 7px 17px;
-    border-radius: 50px;
-    color: rgb(1 8 31);
-    width: 221px;
-    font-size: 24px;
-    font-family: "Centra No2";
-    font-weight: 700;
-    cursor: pointer;
+    top: 9vh;
 }
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 2.7vh;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #FF00A0;
+    border-radius: 30px;
+    color: #000000;
+    background-color: #FF00A0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    width: 13vw;
+    height: 7vh;
+}
+
+.btn:hover {
+    background-color: #FF00A0;
+    color: #000000;
+    border-color: #FF00A0;
+}
+
+.btn i {
+    margin-left: 5px;
+}
+/* .about .grid1 {
+   
+} */
+
+/* Set initial styles for sections */
+.main {
+    background-color: black; /* Initial background color */
+    transition: background-color 1s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+/* Other styles remain the same */
+.navbar, .landing, .home {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+/* Define animation class */
+.reveal {
+    opacity: 1;
+}
+
+
+
 
 .about {
     position: relative;
@@ -215,24 +294,43 @@ h1{
 /* Create a responsive grid */
 .grid1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 9vw;
     align-items: center;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s, transform 0.8s;
 }
 
 /* Style the image */
 .image img {
     max-width: 100%;
     height: auto;
-    border: 3px solid rgb(237, 234, 230);
+    
     margin-bottom: 20px;
-    width: 50%; /* Set the width of the image */
+    width: 32vw; /* Set the width of the image */
     position: relative;
     right: 5%;
+    transform: translateY(20px); 
+    transition: transform 0.8s ease-in-out;
+    animation: ups 2s ease-in-out infinite;
+    
 }
 
+@keyframes ups{
+    0%{
+        transform: translateY(30px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(30px);
+    }
+}
 /* Style the paragraph */
 .para {
-    font-size: 1.23rem; /* Set the font size of the text */
+    font-size: 1.5vw;/** Set the font size of the text */
     color: rgb(237, 234, 230);
     max-width: 100%;
     padding: 0 20px;
@@ -241,6 +339,17 @@ h1{
     left: 5%;
 }
 
+
+
+
+
+.about.show .grid1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+.about.show .image img {
+    transform: translateY(0); /* Move the image down */
+}
 
 
 .project {
@@ -259,6 +368,7 @@ h1{
     border: 2px solid white;
     border-radius: 34px;
     transform: translateX(-50%);
+   
 }
 
 /* Center the <h1> text */
@@ -266,6 +376,7 @@ h1{
    
     color: rgb(237, 234, 230);
     margin-bottom: 20px;
+    
 }
 
 
@@ -359,6 +470,16 @@ h1{
 
 /* Style the project items */
 
+.project .pro > div {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.project.show .pro > div {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 
@@ -387,32 +508,52 @@ h1{
     /* font-size: 2rem; */
     margin-bottom: 20px;
 }
-
+.tech{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 41px;
+    width: 79vw;
+}
 /* Center the group of images */
 .group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    position: relative;
-    top: 10vh;
-    margin-top: 20px;
-    padding: 0 20px;
+    
 }
 
 /* Style the circular images */
 .circle {
     width: 108px;
     height: 108px;
-    border-radius: 50%;
+    
     margin: 10px;
 }
 
 /* Make the images responsive */
 
+.skills .frame1 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s, transform 0.5s;
+}
 
+.skills.show .frame1 {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-
+.tech img:hover{
+    transform: scale(1.5); 
+    
+    transition: transform 0.8s ease-in-out;
+}
+.tech img{
+    transform: scale(1); 
+    transition: transform 0.8s ease-in-out;
+}
 
 .contact {
     position: relative;
@@ -469,12 +610,10 @@ h1{
 }
 
 /* Hover effect for icons */
-.ico:hover {
-    transform: scale(1.5);
-}
+
 
 /* Social media links */
-.me {
+/* .me {
     display: flex;
     justify-content: center;
     margin-top: 42px;
@@ -500,10 +639,64 @@ h1{
 .cont a:hover {
     background-color: rgb(100, 4, 65);
     color: rgb(0, 0, 0);
+} */
+
+
+
+.me {
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    top: 12vh;
+    height: 18vh;
 }
+
+
+
+
+.cont{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    gap: 5px;
+
+
+}
+.cont a{
+    display: flex;
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 160);
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    font-size: 4vh;
+    text-decoration: none;
+    transition: background-color 0.3s ease 0s;
+}
+.cont a:hover {background-color: rgb(197 12 107);}
+
+
+
+
+
 
 /* Responsive adjustments */
 
+.contact .frame2 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.contact.show .frame2 {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 /* Media Query for Responsive Adjustments */

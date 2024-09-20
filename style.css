@@ -11,10 +11,10 @@
     justify-content: center;
     align-items: center;
      } */
-     .cursor {
+     /* .cursor {
    
-        width: 4.5vw;
-        height: 4.5vw;
+        width: 1vw;
+        height: 1vw;
        
         border-radius: 50%;
         transform: translate(-50%, -50%);
@@ -29,7 +29,7 @@
        
         
         
-    }
+    } */
     
     
     
@@ -328,9 +328,9 @@ color: black;}
         transform: translateY(30px);
     }
 }
-/* Style the paragraph */
+
 .para {
-    font-size: 1.5vw;/** Set the font size of the text */
+    font-size: 1.5vw;
     color: rgb(237, 234, 230);
     max-width: 100%;
     padding: 0 20px;
@@ -348,7 +348,7 @@ color: black;}
     transform: translateY(0);
 }
 .about.show .image img {
-    transform: translateY(0); /* Move the image down */
+    transform: translateY(0); 
 }
 
 
@@ -371,7 +371,6 @@ color: black;}
    
 }
 
-/* Center the <h1> text */
 .project h1 {
    
     color: rgb(237, 234, 230);
@@ -451,8 +450,6 @@ color: black;}
 }
 
 
-
-/* Create a responsive grid */
 .pro {
     display: grid;
     grid-template-columns: 1fr;
@@ -462,13 +459,11 @@ color: black;}
     justify-items: center;
     margin-top: 60px;
     grid-template-columns: repeat(auto-fit, minmax(350px,2fr));
-    width: 78%;
-    /* padding-left: 6%; */
+    width: 85%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Style the project items */
 
 .project .pro > div {
     opacity: 0;

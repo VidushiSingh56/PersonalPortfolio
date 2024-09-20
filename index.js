@@ -3,7 +3,7 @@ const text = document.querySelector(".text2");
 
 const textLoad= () =>{
   setTimeout(() =>{
-    text.textContent = "Web Developer";
+    text.textContent = "App Developer";
   }, 0);
   setTimeout(() =>{
     text.textContent = "UI/UX Designer";
@@ -206,6 +206,10 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("scroll", () => {
     cursor.style.display = "block"; // Display the cursor on scroll
 });
+
+
+
+
 
 
 
